@@ -1,10 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website with Discord Widget</title>
+  <title>Tombo Website</title>
+  <style>
+    /* Rainbow background */
+    body {
+      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+      background-size: 100vw 100vh;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Center the container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Spinning cat images */
+    .cat-image {
+      animation: spin 2s infinite;
+      max-width: 200px;
+    }
+
+    /* Spin animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Password text prompt */
+    .password-prompt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .password-input {
+      margin-right: 10px;
+    }
+
+    .password-button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <!-- Replace the following iframe code with the one you provided -->
-    <iframe src="https://discord.com/widget?id=1075418438756995125&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  <!-- Password text prompt -->
+  <div class="password-prompt">
+    <input type="password" class="password-input" placeholder="Enter password...">
+    <button class="password-button">Submit</button>
+  </div>
+
+  <!-- Content behind password prompt -->
+  <div class="container" style="display: none;">
+    <img class="cat-image" src="cat1.png" alt="Spinning Cat">
+    <img class="cat-image" src="cat2.png" alt="Spinning Cat">
+    <img class="cat-image" src="cat3.png" alt="Spinning Cat">
+  </div>
+
+  <!-- Audio element to play "crazy_frog.mp3" -->
+  <audio src="crazy_frog.mp3" preload="auto" autoplay="true" loop="true"></audio>
+
+  <!-- Script to handle password submission -->
+  <script>
+    // Get password input and button elements
+    const passwordInput = document.querySelector('.password-input');
+    const passwordButton = document.querySelector('.password-button');
+    // Add click event listener to password button
+    passwordButton.addEventListener('click', () => {
+      // Get entered password
+      const enteredPassword = passwordInput.value;
+      // Compare entered password with correct password (change 'password' to your desired password)
+      if (enteredPassword === 'password') {
+        // Show content behind password prompt
+        document.querySelector('.container').style.display = 'flex';
+        // Hide password prompt
+        document.querySelector('.password-prompt').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
