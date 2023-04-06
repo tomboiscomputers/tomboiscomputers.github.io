@@ -19,8 +19,8 @@
       height: 100vh;
     }
 
-    /* Spinning cat images */
-    .cat-image {
+    /* Spinning Family Guy images */
+    .family-guy-image {
       animation: spin 2s infinite;
       max-width: 200px;
     }
@@ -69,9 +69,10 @@
 
   <!-- Content behind password prompt -->
   <div class="container" style="display: none;">
-    <img class="cat-image" src="cat1.png" alt="Spinning Cat">
-    <img class="cat-image" src="cat2.png" alt="Spinning Cat">
-    <img class="cat-image" src="cat3.png" alt="Spinning Cat">
+    <img class="family-guy-image" src="family_guy_1.jpg" alt="Spinning Family Guy">
+    <img class="family-guy-image" src="family_guy_2.jpg" alt="Spinning Family Guy">
+    <img class="family-guy-image" src="family_guy_3.jpg" alt="Spinning Family Guy">
+    <img class="family-guy-image" src="family_guy_4.jpg" alt="Spinning Family Guy">
   </div>
 
   <!-- Audio element to play "crazy_frog.mp3" -->
@@ -90,8 +91,3 @@
     // Add click event listener to password button
     passwordButton.addEventListener('click', () => {
       // Get entered password
-      const enteredPassword = passwordInput.value;
-      // Compare entered password with correct password (change 'password' to your desired password)
-      if (enteredPassword === 'password') {
-        // Show content behind password prompt
-        document.querySelector('.container').
