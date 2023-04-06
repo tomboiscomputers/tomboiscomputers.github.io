@@ -5,10 +5,7 @@
   <style>
     /* Rainbow background */
     body {
-      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-      background-size: 100vw 100vh;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red) fixed;
     }
 
     /* Center the container */
@@ -90,11 +87,10 @@
     document.getElementById("submit").addEventListener("click", function() {
       var password = document.getElementById("password").value;
       if (password === "tombowombo2023") {
-        // Show the content if password is correct
         document.querySelector(".password-lock-container").style.display = "none";
+        document.querySelector(".container").style.display = "flex";
         document.body.style.overflow = "auto";
       } else {
-        // Show an error message if password is incorrect
         alert("Incorrect password. Please try again.");
       }
     });
@@ -105,4 +101,9 @@
     <img class="cat-image" src="family_guy_1.jpg" alt="Spinning Cat">
     <img class="cat-image" src="family_guy_2.jpg" alt="Spinning Cat">
     <img class="cat-image" src="family_guy_3.jpg" alt="Spinning Cat">
-    <img class="cat-image" src="family_guy_4.jpg" alt="Spinning Cat
+    <div class="discord-widget-container">
+      <!-- Discord widget code here -->
+    </div>
+  </div>
+</body>
+</html>
