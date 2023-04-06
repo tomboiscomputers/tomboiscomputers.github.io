@@ -19,8 +19,8 @@
       height: 100vh;
     }
 
-    /* Spinning Family Guy images */
-    .family-guy-image {
+    /* Spinning cat images */
+    .cat-image {
       animation: spin 2s infinite;
       max-width: 200px;
     }
@@ -31,58 +31,78 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Password text prompt */
-    .password-prompt {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    .password-input {
-      margin-right: 10px;
-    }
-
-    .password-button {
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
     /* Discord widget container */
     .discord-widget-container {
       width: 350px;
       height: 500px;
       margin: 0 auto;
     }
+
+    /* Password lock container */
+    .password-lock-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Password lock form */
+    .password-lock-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    /* Password lock input */
+    .password-lock-input {
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    /* Password lock submit button */
+    .password-lock-submit {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <!-- Password text prompt -->
-  <div class="password-prompt">
-    <input type="password" class="password-input" placeholder="Enter password...">
-    <button class="password-button">Submit</button>
+  <!-- Password lock container -->
+  <div class="password-lock-container">
+    <form class="password-lock-form">
+      <label for="password" style="margin-bottom: 10px;">Enter Password:</label>
+      <input type="password" id="password" class="password-lock-input" />
+      <button type="button" id="submit" class="password-lock-submit">Submit</button>
+    </form>
   </div>
 
-  <!-- Content behind password prompt -->
-  <div class="container" style="display: none;">
-    <img class="family-guy-image" src="family_guy_1.jpg" alt="Spinning Family Guy">
-    <img class="family-guy-image" src="family_guy_2.jpg" alt="Spinning Family Guy">
-    <img class="family-guy-image" src="family_guy_3.jpg" alt="Spinning Family Guy">
-    <img class="family-guy-image" src="family_guy_4.jpg" alt="Spinning Family Guy">
-  </div>
-
-  <!-- Audio element to play "crazy_frog.mp3" -->
-  <audio src="crazy_frog.mp3" preload="auto" autoplay="true" loop="true"></audio>
-
-  <!-- Discord widget iframe -->
-  <div class="discord-widget-container" style="display: none;">
-    <iframe src="https://discord.com/widget?id=1075418438756995125&theme=dark" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-  </div>
-
-  <!-- Script to handle password submission -->
+  <!-- Script to handle password lock -->
   <script>
-    // Get password input and
+    document.getElementById("submit").addEventListener("click", function() {
+      var password = document.getElementById("password").value;
+      if (password === "tombowombo2023") {
+        // Show the content if password is correct
+        document.querySelector(".password-lock-container").style.display = "none";
+        document.body.style.overflow = "auto";
+      } else {
+        // Show an error message if password is incorrect
+        alert("Incorrect password. Please try again.");
+      }
+    });
+  </script>
+  
+  <!-- Content -->
+  <div class="container" style="display: none;">
+    <img class="cat-image" src="family_guy_1.jpg" alt="Spinning Cat">
+    <img class="cat-image" src="family_guy_2.jpg" alt="Spinning Cat">
+    <img class="cat-image" src="family_guy_3.jpg" alt="Spinning Cat">
+    <img class="cat-image" src="family_guy_4.jpg" alt="Spinning Cat
